@@ -59,7 +59,7 @@ namespace LogMonitor
             }
             else
             {
-                MessageBox.Show("Path doesn't exist");
+                MessageBox.Show("Cannot access the path provided, please try running the application with Admin Privilege");
             }
 
             config.AppSettings.Settings[_selectedExtension].Value = cmbExtensions.Text;
@@ -95,7 +95,16 @@ namespace LogMonitor
 
         private bool CheckPathExists(string text)
         {
-            return Directory.Exists(text);
+            try
+            {
+                return Directory.Exists(text);
+            }
+            catch (Exception ex)
+            {
+                //MessageBox.Show($"Cannot access the path provided- {ex.Message}");
+                return false;
+            }
+            
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
