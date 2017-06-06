@@ -17,7 +17,8 @@ namespace LogMonitor.IO
                 { "Replay Buffer Start", "Replay Buffer Start"},
                 { "Replay Buffer Stop", "Replay Buffer Stop"},
                 { "Streaming Start", "Streaming Start" },
-                { "Streaming Stop" , "Streaming Stop" }
+                { "Streaming Stop" , "Streaming Stop" },
+                { "Wrote replay buffer to","Wrote replay buffer to" }
             };
 
             return dictionary;
