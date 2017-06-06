@@ -20,4 +20,9 @@ Streaming Start
 Streaming Stop 
 Wrote replay buffer
 
+Binaries can be downloaded from the following release page
+
+https://github.com/RCuber/LogMonitor/releases
+
+
 [![Build status](https://ci.appveyor.com/api/projects/status/0x348rk753h0aumu?svg=true)](https://ci.appveyor.com/project/RCuber/logmonitor)
