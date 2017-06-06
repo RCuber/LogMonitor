@@ -61,10 +61,17 @@ namespace LogMonitor
             {
                 MessageBox.Show("Cannot access the path provided, please try running the application with Admin Privilege");
             }
+            try
+            {
+                config.AppSettings.Settings[_selectedExtension].Value = cmbExtensions.Text;
+                config.Save(ConfigurationSaveMode.Modified);
+                ConfigurationManager.RefreshSection("appSettings");
+            }
+            catch (Exception ex)
+            {
 
-            config.AppSettings.Settings[_selectedExtension].Value = cmbExtensions.Text;
-            config.Save(ConfigurationSaveMode.Modified);
-            ConfigurationManager.RefreshSection("appSettings");
+                MessageBox.Show($"Could Not Save Changes, Please try running the application with Admin Privilege {Environment.NewLine} {ex.Message}","Error");
+            }
         }
 
         private List<string> ReadConfiguration(string path)
